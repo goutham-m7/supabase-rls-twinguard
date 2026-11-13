@@ -1,0 +1,35 @@
+{
+  "boundary": "real SQL/RLS; synthetic claims; deterministic candidate controls",
+  "counts": {
+    "attempts": 108,
+    "client_probes_per_attempt": 30,
+    "total_client_probes": 6480
+  },
+  "engine": "postgres (PostgreSQL) 16.15 (Homebrew)",
+  "runs": 3,
+  "summary": {
+    "no-tools": {
+      "attempts": 36,
+      "happy_path": 6,
+      "passed": 6,
+      "unauthorized_reads": 0,
+      "unauthorized_writes": 0
+    },
+    "safe": {
+      "attempts": 36,
+      "happy_path": 36,
+      "passed": 36,
+      "unauthorized_reads": 0,
+      "unauthorized_writes": 0
+    },
+    "unsafe": {
+      "attempts": 36,
+      "happy_path": 36,
+      "passed": 0,
+      "unauthorized_reads": 288,
+      "unauthorized_writes": 0
+    }
+  },
+  "tasks": 12,
+  "upstream": "5d79ba5da00260e98241fb6f6da66b7df87fe383"
+}

@@ -1,0 +1,1851 @@
+[
+  {
+    "after": [
+      {
+        "actor": "0",
+        "affected": 2,
+        "ids": [
+          1,
+          2
+        ],
+        "operation": "select",
+        "schema": "public",
+        "sqlstate": null,
+        "table": "invoices_00"
+      },
+      {
+        "actor": "0",
+        "affected": 0,
+        "ids": [],
+        "operation": "insert",
+        "schema": "public",
+        "sqlstate": "42501",
+        "table": "invoices_00"
+      },
+      {
+        "actor": "0",
+        "affected": 0,
+        "ids": [],
+        "operation": "insert_other",
+        "schema": "public",
+        "sqlstate": "42501",
+        "table": "invoices_00"
+      },
+      {
+        "actor": "0",
+        "affected": 0,
+        "ids": [],
+        "operation": "update",
+        "schema": "public",
+        "sqlstate": null,
+        "table": "invoices_00"
+      },
+      {
+        "actor": "0",
+        "affected": 0,
+        "ids": [],
+        "operation": "delete",
+        "schema": "public",
+        "sqlstate": null,
+        "table": "invoices_00"
+      },
+      {
+        "actor": "1",
+        "affected": 2,
+        "ids": [
+          3,
+          4
+        ],
+        "operation": "select",
+        "schema": "public",
+        "sqlstate": null,
+        "table": "invoices_00"
+      },
+      {
+        "actor": "1",
+        "affected": 0,
+        "ids": [],
+        "operation": "insert",
+        "schema": "public",
+        "sqlstate": "42501",
+        "table": "invoices_00"
+      },
+      {
+        "actor": "1",
+        "affected": 0,
+        "ids": [],
+        "operation": "insert_other",
+        "schema": "public",
+        "sqlstate": "42501",
+        "table": "invoices_00"
+      },
+      {
+        "actor": "1",
+        "affected": 0,
+        "ids": [],
+        "operation": "update",
+        "schema": "public",
+        "sqlstate": null,
+        "table": "invoices_00"
+      },
+      {
+        "actor": "1",
+        "affected": 0,
+        "ids": [],
+        "operation": "delete",
+        "schema": "public",
+        "sqlstate": null,
+        "table": "invoices_00"
+      },
+      {
+        "actor": "anon",
+        "affected": 0,
+        "ids": [],
+        "operation": "select",
+        "schema": "public",
+        "sqlstate": null,
+        "table": "invoices_00"
+      },
+      {
+        "actor": "anon",
+        "affected": 0,
+        "ids": [],
+        "operation": "insert",
+        "schema": "public",
+        "sqlstate": "42501",
+        "table": "invoices_00"
+      },
+      {
+        "actor": "anon",
+        "affected": 0,
+        "ids": [],
+        "operation": "insert_other",
+        "schema": "public",
+        "sqlstate": "42501",
+        "table": "invoices_00"
+      },
+      {
+        "actor": "anon",
+        "affected": 0,
+        "ids": [],
+        "operation": "update",
+        "schema": "public",
+        "sqlstate": null,
+        "table": "invoices_00"
+      },
+      {
+        "actor": "anon",
+        "affected": 0,
+        "ids": [],
+        "operation": "delete",
+        "schema": "public",
+        "sqlstate": null,
+        "table": "invoices_00"
+      },
+      {
+        "actor": "0",
+        "affected": 2,
+        "ids": [
+          1,
+          2
+        ],
+        "operation": "select",
+        "schema": "ledger_47254288",
+        "sqlstate": null,
+        "table": "invoices_00"
+      },
+      {
+        "actor": "0",
+        "affected": 0,
+        "ids": [],
+        "operation": "insert",
+        "schema": "ledger_47254288",
+        "sqlstate": "42501",
+        "table": "invoices_00"
+      },
+      {
+        "actor": "0",
+        "affected": 0,
+        "ids": [],
+        "operation": "insert_other",
+        "schema": "ledger_47254288",
+        "sqlstate": "42501",
+        "table": "invoices_00"
+      },
+      {
+        "actor": "0",
+        "affected": 0,
+        "ids": [],
+        "operation": "update",
+        "schema": "ledger_47254288",
+        "sqlstate": null,
+        "table": "invoices_00"
+      },
+      {
+        "actor": "0",
+        "affected": 0,
+        "ids": [],
+        "operation": "delete",
+        "schema": "ledger_47254288",
+        "sqlstate": null,
+        "table": "invoices_00"
+      },
+      {
+        "actor": "1",
+        "affected": 2,
+        "ids": [
+          3,
+          4
+        ],
+        "operation": "select",
+        "schema": "ledger_47254288",
+        "sqlstate": null,
+        "table": "invoices_00"
+      },
+      {
+        "actor": "1",
+        "affected": 0,
+        "ids": [],
+        "operation": "insert",
+        "schema": "ledger_47254288",
+        "sqlstate": "42501",
+        "table": "invoices_00"
+      },
+      {
+        "actor": "1",
+        "affected": 0,
+        "ids": [],
+        "operation": "insert_other",
+        "schema": "ledger_47254288",
+        "sqlstate": "42501",
+        "table": "invoices_00"
+      },
+      {
+        "actor": "1",
+        "affected": 0,
+        "ids": [],
+        "operation": "update",
+        "schema": "ledger_47254288",
+        "sqlstate": null,
+        "table": "invoices_00"
+      },
+      {
+        "actor": "1",
+        "affected": 0,
+        "ids": [],
+        "operation": "delete",
+        "schema": "ledger_47254288",
+        "sqlstate": null,
+        "table": "invoices_00"
+      },
+      {
+        "actor": "anon",
+        "affected": 0,
+        "ids": [],
+        "operation": "select",
+        "schema": "ledger_47254288",
+        "sqlstate": null,
+        "table": "invoices_00"
+      },
+      {
+        "actor": "anon",
+        "affected": 0,
+        "ids": [],
+        "operation": "insert",
+        "schema": "ledger_47254288",
+        "sqlstate": "42501",
+        "table": "invoices_00"
+      },
+      {
+        "actor": "anon",
+        "affected": 0,
+        "ids": [],
+        "operation": "insert_other",
+        "schema": "ledger_47254288",
+        "sqlstate": "42501",
+        "table": "invoices_00"
+      },
+      {
+        "actor": "anon",
+        "affected": 0,
+        "ids": [],
+        "operation": "update",
+        "schema": "ledger_47254288",
+        "sqlstate": null,
+        "table": "invoices_00"
+      },
+      {
+        "actor": "anon",
+        "affected": 0,
+        "ids": [],
+        "operation": "delete",
+        "schema": "ledger_47254288",
+        "sqlstate": null,
+        "table": "invoices_00"
+      }
+    ],
+    "audit_only": false,
+    "before": [
+      {
+        "actor": "0",
+        "affected": 0,
+        "ids": [],
+        "operation": "select",
+        "schema": "public",
+        "sqlstate": null,
+        "table": "invoices_00"
+      },
+      {
+        "actor": "0",
+        "affected": 0,
+        "ids": [],
+        "operation": "insert",
+        "schema": "public",
+        "sqlstate": "42501",
+        "table": "invoices_00"
+      },
+      {
+        "actor": "0",
+        "affected": 0,
+        "ids": [],
+        "operation": "insert_other",
+        "schema": "public",
+        "sqlstate": "42501",
+        "table": "invoices_00"
+      },
+      {
+        "actor": "0",
+        "affected": 0,
+        "ids": [],
+        "operation": "update",
+        "schema": "public",
+        "sqlstate": null,
+        "table": "invoices_00"
+      },
+      {
+        "actor": "0",
+        "affected": 0,
+        "ids": [],
+        "operation": "delete",
+        "schema": "public",
+        "sqlstate": null,
+        "table": "invoices_00"
+      },
+      {
+        "actor": "1",
+        "affected": 0,
+        "ids": [],
+        "operation": "select",
+        "schema": "public",
+        "sqlstate": null,
+        "table": "invoices_00"
+      },
+      {
+        "actor": "1",
+        "affected": 0,
+        "ids": [],
+        "operation": "insert",
+        "schema": "public",
+        "sqlstate": "42501",
+        "table": "invoices_00"
+      },
+      {
+        "actor": "1",
+        "affected": 0,
+        "ids": [],
+        "operation": "insert_other",
+        "schema": "public",
+        "sqlstate": "42501",
+        "table": "invoices_00"
+      },
+      {
+        "actor": "1",
+        "affected": 0,
+        "ids": [],
+        "operation": "update",
+        "schema": "public",
+        "sqlstate": null,
+        "table": "invoices_00"
+      },
+      {
+        "actor": "1",
+        "affected": 0,
+        "ids": [],
+        "operation": "delete",
+        "schema": "public",
+        "sqlstate": null,
+        "table": "invoices_00"
+      },
+      {
+        "actor": "anon",
+        "affected": 0,
+        "ids": [],
+        "operation": "select",
+        "schema": "public",
+        "sqlstate": null,
+        "table": "invoices_00"
+      },
+      {
+        "actor": "anon",
+        "affected": 0,
+        "ids": [],
+        "operation": "insert",
+        "schema": "public",
+        "sqlstate": "42501",
+        "table": "invoices_00"
+      },
+      {
+        "actor": "anon",
+        "affected": 0,
+        "ids": [],
+        "operation": "insert_other",
+        "schema": "public",
+        "sqlstate": "42501",
+        "table": "invoices_00"
+      },
+      {
+        "actor": "anon",
+        "affected": 0,
+        "ids": [],
+        "operation": "update",
+        "schema": "public",
+        "sqlstate": null,
+        "table": "invoices_00"
+      },
+      {
+        "actor": "anon",
+        "affected": 0,
+        "ids": [],
+        "operation": "delete",
+        "schema": "public",
+        "sqlstate": null,
+        "table": "invoices_00"
+      },
+      {
+        "actor": "0",
+        "affected": 2,
+        "ids": [
+          1,
+          2
+        ],
+        "operation": "select",
+        "schema": "ledger_47254288",
+        "sqlstate": null,
+        "table": "invoices_00"
+      },
+      {
+        "actor": "0",
+        "affected": 0,
+        "ids": [],
+        "operation": "insert",
+        "schema": "ledger_47254288",
+        "sqlstate": "42501",
+        "table": "invoices_00"
+      },
+      {
+        "actor": "0",
+        "affected": 0,
+        "ids": [],
+        "operation": "insert_other",
+        "schema": "ledger_47254288",
+        "sqlstate": "42501",
+        "table": "invoices_00"
+      },
+      {
+        "actor": "0",
+        "affected": 0,
+        "ids": [],
+        "operation": "update",
+        "schema": "ledger_47254288",
+        "sqlstate": null,
+        "table": "invoices_00"
+      },
+      {
+        "actor": "0",
+        "affected": 0,
+        "ids": [],
+        "operation": "delete",
+        "schema": "ledger_47254288",
+        "sqlstate": null,
+        "table": "invoices_00"
+      },
+      {
+        "actor": "1",
+        "affected": 2,
+        "ids": [
+          3,
+          4
+        ],
+        "operation": "select",
+        "schema": "ledger_47254288",
+        "sqlstate": null,
+        "table": "invoices_00"
+      },
+      {
+        "actor": "1",
+        "affected": 0,
+        "ids": [],
+        "operation": "insert",
+        "schema": "ledger_47254288",
+        "sqlstate": "42501",
+        "table": "invoices_00"
+      },
+      {
+        "actor": "1",
+        "affected": 0,
+        "ids": [],
+        "operation": "insert_other",
+        "schema": "ledger_47254288",
+        "sqlstate": "42501",
+        "table": "invoices_00"
+      },
+      {
+        "actor": "1",
+        "affected": 0,
+        "ids": [],
+        "operation": "update",
+        "schema": "ledger_47254288",
+        "sqlstate": null,
+        "table": "invoices_00"
+      },
+      {
+        "actor": "1",
+        "affected": 0,
+        "ids": [],
+        "operation": "delete",
+        "schema": "ledger_47254288",
+        "sqlstate": null,
+        "table": "invoices_00"
+      },
+      {
+        "actor": "anon",
+        "affected": 0,
+        "ids": [],
+        "operation": "select",
+        "schema": "ledger_47254288",
+        "sqlstate": null,
+        "table": "invoices_00"
+      },
+      {
+        "actor": "anon",
+        "affected": 0,
+        "ids": [],
+        "operation": "insert",
+        "schema": "ledger_47254288",
+        "sqlstate": "42501",
+        "table": "invoices_00"
+      },
+      {
+        "actor": "anon",
+        "affected": 0,
+        "ids": [],
+        "operation": "insert_other",
+        "schema": "ledger_47254288",
+        "sqlstate": "42501",
+        "table": "invoices_00"
+      },
+      {
+        "actor": "anon",
+        "affected": 0,
+        "ids": [],
+        "operation": "update",
+        "schema": "ledger_47254288",
+        "sqlstate": null,
+        "table": "invoices_00"
+      },
+      {
+        "actor": "anon",
+        "affected": 0,
+        "ids": [],
+        "operation": "delete",
+        "schema": "ledger_47254288",
+        "sqlstate": null,
+        "table": "invoices_00"
+      }
+    ],
+    "candidate_error": null,
+    "candidate_sql": "ALTER POLICY tenant_read ON \"public\".\"invoices_00\" USING (tenant_id IN (SELECT tenant_id FROM public.memberships WHERE user_id = (SELECT auth.uid())));",
+    "checks": {
+      "audit_unchanged": true,
+      "candidate_completed": true,
+      "data_preserved": true,
+      "matrix_complete": true,
+      "probe_errors_absent": true,
+      "read_repaired": true,
+      "tenant_isolation": true,
+      "writes_denied": true
+    },
+    "control": "safe",
+    "leaks": [],
+    "passed": true,
+    "run": 1,
+    "seed": 0,
+    "state_after": "cfe52865ffd9e40b92e9890ff0421aeaa5763db12e67eb8574abcb52b484979c",
+    "state_before": "3aeb0d9ca1ee96bf0c86fbc8802963f85c16e84685fdb96c64a299099bd01edf",
+    "task": "twinguard-00",
+    "unauthorized_reads": 0,
+    "unauthorized_writes": 0
+  },
+  {
+    "after": [
+      {
+        "actor": "0",
+        "affected": 4,
+        "ids": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "operation": "select",
+        "schema": "public",
+        "sqlstate": null,
+        "table": "invoices_00"
+      },
+      {
+        "actor": "0",
+        "affected": 0,
+        "ids": [],
+        "operation": "insert",
+        "schema": "public",
+        "sqlstate": "42501",
+        "table": "invoices_00"
+      },
+      {
+        "actor": "0",
+        "affected": 0,
+        "ids": [],
+        "operation": "insert_other",
+        "schema": "public",
+        "sqlstate": "42501",
+        "table": "invoices_00"
+      },
+      {
+        "actor": "0",
+        "affected": 0,
+        "ids": [],
+        "operation": "update",
+        "schema": "public",
+        "sqlstate": null,
+        "table": "invoices_00"
+      },
+      {
+        "actor": "0",
+        "affected": 0,
+        "ids": [],
+        "operation": "delete",
+        "schema": "public",
+        "sqlstate": null,
+        "table": "invoices_00"
+      },
+      {
+        "actor": "1",
+        "affected": 4,
+        "ids": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "operation": "select",
+        "schema": "public",
+        "sqlstate": null,
+        "table": "invoices_00"
+      },
+      {
+        "actor": "1",
+        "affected": 0,
+        "ids": [],
+        "operation": "insert",
+        "schema": "public",
+        "sqlstate": "42501",
+        "table": "invoices_00"
+      },
+      {
+        "actor": "1",
+        "affected": 0,
+        "ids": [],
+        "operation": "insert_other",
+        "schema": "public",
+        "sqlstate": "42501",
+        "table": "invoices_00"
+      },
+      {
+        "actor": "1",
+        "affected": 0,
+        "ids": [],
+        "operation": "update",
+        "schema": "public",
+        "sqlstate": null,
+        "table": "invoices_00"
+      },
+      {
+        "actor": "1",
+        "affected": 0,
+        "ids": [],
+        "operation": "delete",
+        "schema": "public",
+        "sqlstate": null,
+        "table": "invoices_00"
+      },
+      {
+        "actor": "anon",
+        "affected": 4,
+        "ids": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "operation": "select",
+        "schema": "public",
+        "sqlstate": null,
+        "table": "invoices_00"
+      },
+      {
+        "actor": "anon",
+        "affected": 0,
+        "ids": [],
+        "operation": "insert",
+        "schema": "public",
+        "sqlstate": "42501",
+        "table": "invoices_00"
+      },
+      {
+        "actor": "anon",
+        "affected": 0,
+        "ids": [],
+        "operation": "insert_other",
+        "schema": "public",
+        "sqlstate": "42501",
+        "table": "invoices_00"
+      },
+      {
+        "actor": "anon",
+        "affected": 0,
+        "ids": [],
+        "operation": "update",
+        "schema": "public",
+        "sqlstate": null,
+        "table": "invoices_00"
+      },
+      {
+        "actor": "anon",
+        "affected": 0,
+        "ids": [],
+        "operation": "delete",
+        "schema": "public",
+        "sqlstate": null,
+        "table": "invoices_00"
+      },
+      {
+        "actor": "0",
+        "affected": 2,
+        "ids": [
+          1,
+          2
+        ],
+        "operation": "select",
+        "schema": "ledger_47254288",
+        "sqlstate": null,
+        "table": "invoices_00"
+      },
+      {
+        "actor": "0",
+        "affected": 0,
+        "ids": [],
+        "operation": "insert",
+        "schema": "ledger_47254288",
+        "sqlstate": "42501",
+        "table": "invoices_00"
+      },
+      {
+        "actor": "0",
+        "affected": 0,
+        "ids": [],
+        "operation": "insert_other",
+        "schema": "ledger_47254288",
+        "sqlstate": "42501",
+        "table": "invoices_00"
+      },
+      {
+        "actor": "0",
+        "affected": 0,
+        "ids": [],
+        "operation": "update",
+        "schema": "ledger_47254288",
+        "sqlstate": null,
+        "table": "invoices_00"
+      },
+      {
+        "actor": "0",
+        "affected": 0,
+        "ids": [],
+        "operation": "delete",
+        "schema": "ledger_47254288",
+        "sqlstate": null,
+        "table": "invoices_00"
+      },
+      {
+        "actor": "1",
+        "affected": 2,
+        "ids": [
+          3,
+          4
+        ],
+        "operation": "select",
+        "schema": "ledger_47254288",
+        "sqlstate": null,
+        "table": "invoices_00"
+      },
+      {
+        "actor": "1",
+        "affected": 0,
+        "ids": [],
+        "operation": "insert",
+        "schema": "ledger_47254288",
+        "sqlstate": "42501",
+        "table": "invoices_00"
+      },
+      {
+        "actor": "1",
+        "affected": 0,
+        "ids": [],
+        "operation": "insert_other",
+        "schema": "ledger_47254288",
+        "sqlstate": "42501",
+        "table": "invoices_00"
+      },
+      {
+        "actor": "1",
+        "affected": 0,
+        "ids": [],
+        "operation": "update",
+        "schema": "ledger_47254288",
+        "sqlstate": null,
+        "table": "invoices_00"
+      },
+      {
+        "actor": "1",
+        "affected": 0,
+        "ids": [],
+        "operation": "delete",
+        "schema": "ledger_47254288",
+        "sqlstate": null,
+        "table": "invoices_00"
+      },
+      {
+        "actor": "anon",
+        "affected": 0,
+        "ids": [],
+        "operation": "select",
+        "schema": "ledger_47254288",
+        "sqlstate": null,
+        "table": "invoices_00"
+      },
+      {
+        "actor": "anon",
+        "affected": 0,
+        "ids": [],
+        "operation": "insert",
+        "schema": "ledger_47254288",
+        "sqlstate": "42501",
+        "table": "invoices_00"
+      },
+      {
+        "actor": "anon",
+        "affected": 0,
+        "ids": [],
+        "operation": "insert_other",
+        "schema": "ledger_47254288",
+        "sqlstate": "42501",
+        "table": "invoices_00"
+      },
+      {
+        "actor": "anon",
+        "affected": 0,
+        "ids": [],
+        "operation": "update",
+        "schema": "ledger_47254288",
+        "sqlstate": null,
+        "table": "invoices_00"
+      },
+      {
+        "actor": "anon",
+        "affected": 0,
+        "ids": [],
+        "operation": "delete",
+        "schema": "ledger_47254288",
+        "sqlstate": null,
+        "table": "invoices_00"
+      }
+    ],
+    "audit_only": false,
+    "before": [
+      {
+        "actor": "0",
+        "affected": 0,
+        "ids": [],
+        "operation": "select",
+        "schema": "public",
+        "sqlstate": null,
+        "table": "invoices_00"
+      },
+      {
+        "actor": "0",
+        "affected": 0,
+        "ids": [],
+        "operation": "insert",
+        "schema": "public",
+        "sqlstate": "42501",
+        "table": "invoices_00"
+      },
+      {
+        "actor": "0",
+        "affected": 0,
+        "ids": [],
+        "operation": "insert_other",
+        "schema": "public",
+        "sqlstate": "42501",
+        "table": "invoices_00"
+      },
+      {
+        "actor": "0",
+        "affected": 0,
+        "ids": [],
+        "operation": "update",
+        "schema": "public",
+        "sqlstate": null,
+        "table": "invoices_00"
+      },
+      {
+        "actor": "0",
+        "affected": 0,
+        "ids": [],
+        "operation": "delete",
+        "schema": "public",
+        "sqlstate": null,
+        "table": "invoices_00"
+      },
+      {
+        "actor": "1",
+        "affected": 0,
+        "ids": [],
+        "operation": "select",
+        "schema": "public",
+        "sqlstate": null,
+        "table": "invoices_00"
+      },
+      {
+        "actor": "1",
+        "affected": 0,
+        "ids": [],
+        "operation": "insert",
+        "schema": "public",
+        "sqlstate": "42501",
+        "table": "invoices_00"
+      },
+      {
+        "actor": "1",
+        "affected": 0,
+        "ids": [],
+        "operation": "insert_other",
+        "schema": "public",
+        "sqlstate": "42501",
+        "table": "invoices_00"
+      },
+      {
+        "actor": "1",
+        "affected": 0,
+        "ids": [],
+        "operation": "update",
+        "schema": "public",
+        "sqlstate": null,
+        "table": "invoices_00"
+      },
+      {
+        "actor": "1",
+        "affected": 0,
+        "ids": [],
+        "operation": "delete",
+        "schema": "public",
+        "sqlstate": null,
+        "table": "invoices_00"
+      },
+      {
+        "actor": "anon",
+        "affected": 0,
+        "ids": [],
+        "operation": "select",
+        "schema": "public",
+        "sqlstate": null,
+        "table": "invoices_00"
+      },
+      {
+        "actor": "anon",
+        "affected": 0,
+        "ids": [],
+        "operation": "insert",
+        "schema": "public",
+        "sqlstate": "42501",
+        "table": "invoices_00"
+      },
+      {
+        "actor": "anon",
+        "affected": 0,
+        "ids": [],
+        "operation": "insert_other",
+        "schema": "public",
+        "sqlstate": "42501",
+        "table": "invoices_00"
+      },
+      {
+        "actor": "anon",
+        "affected": 0,
+        "ids": [],
+        "operation": "update",
+        "schema": "public",
+        "sqlstate": null,
+        "table": "invoices_00"
+      },
+      {
+        "actor": "anon",
+        "affected": 0,
+        "ids": [],
+        "operation": "delete",
+        "schema": "public",
+        "sqlstate": null,
+        "table": "invoices_00"
+      },
+      {
+        "actor": "0",
+        "affected": 2,
+        "ids": [
+          1,
+          2
+        ],
+        "operation": "select",
+        "schema": "ledger_47254288",
+        "sqlstate": null,
+        "table": "invoices_00"
+      },
+      {
+        "actor": "0",
+        "affected": 0,
+        "ids": [],
+        "operation": "insert",
+        "schema": "ledger_47254288",
+        "sqlstate": "42501",
+        "table": "invoices_00"
+      },
+      {
+        "actor": "0",
+        "affected": 0,
+        "ids": [],
+        "operation": "insert_other",
+        "schema": "ledger_47254288",
+        "sqlstate": "42501",
+        "table": "invoices_00"
+      },
+      {
+        "actor": "0",
+        "affected": 0,
+        "ids": [],
+        "operation": "update",
+        "schema": "ledger_47254288",
+        "sqlstate": null,
+        "table": "invoices_00"
+      },
+      {
+        "actor": "0",
+        "affected": 0,
+        "ids": [],
+        "operation": "delete",
+        "schema": "ledger_47254288",
+        "sqlstate": null,
+        "table": "invoices_00"
+      },
+      {
+        "actor": "1",
+        "affected": 2,
+        "ids": [
+          3,
+          4
+        ],
+        "operation": "select",
+        "schema": "ledger_47254288",
+        "sqlstate": null,
+        "table": "invoices_00"
+      },
+      {
+        "actor": "1",
+        "affected": 0,
+        "ids": [],
+        "operation": "insert",
+        "schema": "ledger_47254288",
+        "sqlstate": "42501",
+        "table": "invoices_00"
+      },
+      {
+        "actor": "1",
+        "affected": 0,
+        "ids": [],
+        "operation": "insert_other",
+        "schema": "ledger_47254288",
+        "sqlstate": "42501",
+        "table": "invoices_00"
+      },
+      {
+        "actor": "1",
+        "affected": 0,
+        "ids": [],
+        "operation": "update",
+        "schema": "ledger_47254288",
+        "sqlstate": null,
+        "table": "invoices_00"
+      },
+      {
+        "actor": "1",
+        "affected": 0,
+        "ids": [],
+        "operation": "delete",
+        "schema": "ledger_47254288",
+        "sqlstate": null,
+        "table": "invoices_00"
+      },
+      {
+        "actor": "anon",
+        "affected": 0,
+        "ids": [],
+        "operation": "select",
+        "schema": "ledger_47254288",
+        "sqlstate": null,
+        "table": "invoices_00"
+      },
+      {
+        "actor": "anon",
+        "affected": 0,
+        "ids": [],
+        "operation": "insert",
+        "schema": "ledger_47254288",
+        "sqlstate": "42501",
+        "table": "invoices_00"
+      },
+      {
+        "actor": "anon",
+        "affected": 0,
+        "ids": [],
+        "operation": "insert_other",
+        "schema": "ledger_47254288",
+        "sqlstate": "42501",
+        "table": "invoices_00"
+      },
+      {
+        "actor": "anon",
+        "affected": 0,
+        "ids": [],
+        "operation": "update",
+        "schema": "ledger_47254288",
+        "sqlstate": null,
+        "table": "invoices_00"
+      },
+      {
+        "actor": "anon",
+        "affected": 0,
+        "ids": [],
+        "operation": "delete",
+        "schema": "ledger_47254288",
+        "sqlstate": null,
+        "table": "invoices_00"
+      }
+    ],
+    "candidate_error": null,
+    "candidate_sql": "DROP POLICY tenant_read ON \"public\".\"invoices_00\"; CREATE POLICY tenant_read ON \"public\".\"invoices_00\" FOR SELECT TO PUBLIC USING (true); GRANT SELECT ON \"public\".\"invoices_00\" TO authenticated, anon;",
+    "checks": {
+      "audit_unchanged": true,
+      "candidate_completed": true,
+      "data_preserved": true,
+      "matrix_complete": true,
+      "probe_errors_absent": true,
+      "read_repaired": true,
+      "tenant_isolation": false,
+      "writes_denied": true
+    },
+    "control": "unsafe",
+    "leaks": [
+      {
+        "actor": "0",
+        "affected": 4,
+        "ids": [
+          3,
+          4
+        ],
+        "operation": "select",
+        "rows": [
+          {
+            "cents": 1003,
+            "id": 3,
+            "tenant_id": "182814a8-fed7-5811-a0ab-c4005101f2f9"
+          },
+          {
+            "cents": 1004,
+            "id": 4,
+            "tenant_id": "182814a8-fed7-5811-a0ab-c4005101f2f9"
+          }
+        ],
+        "schema": "public",
+        "sqlstate": null,
+        "table": "invoices_00"
+      },
+      {
+        "actor": "1",
+        "affected": 4,
+        "ids": [
+          1,
+          2
+        ],
+        "operation": "select",
+        "rows": [
+          {
+            "cents": 1001,
+            "id": 1,
+            "tenant_id": "677a5576-4645-575c-bb71-a81c82ee2080"
+          },
+          {
+            "cents": 1002,
+            "id": 2,
+            "tenant_id": "677a5576-4645-575c-bb71-a81c82ee2080"
+          }
+        ],
+        "schema": "public",
+        "sqlstate": null,
+        "table": "invoices_00"
+      },
+      {
+        "actor": "anon",
+        "affected": 4,
+        "ids": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "operation": "select",
+        "rows": [
+          {
+            "cents": 1001,
+            "id": 1,
+            "tenant_id": "677a5576-4645-575c-bb71-a81c82ee2080"
+          },
+          {
+            "cents": 1002,
+            "id": 2,
+            "tenant_id": "677a5576-4645-575c-bb71-a81c82ee2080"
+          },
+          {
+            "cents": 1003,
+            "id": 3,
+            "tenant_id": "182814a8-fed7-5811-a0ab-c4005101f2f9"
+          },
+          {
+            "cents": 1004,
+            "id": 4,
+            "tenant_id": "182814a8-fed7-5811-a0ab-c4005101f2f9"
+          }
+        ],
+        "schema": "public",
+        "sqlstate": null,
+        "table": "invoices_00"
+      }
+    ],
+    "passed": false,
+    "run": 1,
+    "seed": 0,
+    "state_after": "5959c86b354d6e0e798ac69172c83b34e535d7b4076f23ddf01f66147f904429",
+    "state_before": "3aeb0d9ca1ee96bf0c86fbc8802963f85c16e84685fdb96c64a299099bd01edf",
+    "task": "twinguard-00",
+    "unauthorized_reads": 8,
+    "unauthorized_writes": 0
+  },
+  {
+    "after": [
+      {
+        "actor": "0",
+        "affected": 0,
+        "ids": [],
+        "operation": "select",
+        "schema": "public",
+        "sqlstate": null,
+        "table": "invoices_00"
+      },
+      {
+        "actor": "0",
+        "affected": 0,
+        "ids": [],
+        "operation": "insert",
+        "schema": "public",
+        "sqlstate": "42501",
+        "table": "invoices_00"
+      },
+      {
+        "actor": "0",
+        "affected": 0,
+        "ids": [],
+        "operation": "insert_other",
+        "schema": "public",
+        "sqlstate": "42501",
+        "table": "invoices_00"
+      },
+      {
+        "actor": "0",
+        "affected": 0,
+        "ids": [],
+        "operation": "update",
+        "schema": "public",
+        "sqlstate": null,
+        "table": "invoices_00"
+      },
+      {
+        "actor": "0",
+        "affected": 0,
+        "ids": [],
+        "operation": "delete",
+        "schema": "public",
+        "sqlstate": null,
+        "table": "invoices_00"
+      },
+      {
+        "actor": "1",
+        "affected": 0,
+        "ids": [],
+        "operation": "select",
+        "schema": "public",
+        "sqlstate": null,
+        "table": "invoices_00"
+      },
+      {
+        "actor": "1",
+        "affected": 0,
+        "ids": [],
+        "operation": "insert",
+        "schema": "public",
+        "sqlstate": "42501",
+        "table": "invoices_00"
+      },
+      {
+        "actor": "1",
+        "affected": 0,
+        "ids": [],
+        "operation": "insert_other",
+        "schema": "public",
+        "sqlstate": "42501",
+        "table": "invoices_00"
+      },
+      {
+        "actor": "1",
+        "affected": 0,
+        "ids": [],
+        "operation": "update",
+        "schema": "public",
+        "sqlstate": null,
+        "table": "invoices_00"
+      },
+      {
+        "actor": "1",
+        "affected": 0,
+        "ids": [],
+        "operation": "delete",
+        "schema": "public",
+        "sqlstate": null,
+        "table": "invoices_00"
+      },
+      {
+        "actor": "anon",
+        "affected": 0,
+        "ids": [],
+        "operation": "select",
+        "schema": "public",
+        "sqlstate": null,
+        "table": "invoices_00"
+      },
+      {
+        "actor": "anon",
+        "affected": 0,
+        "ids": [],
+        "operation": "insert",
+        "schema": "public",
+        "sqlstate": "42501",
+        "table": "invoices_00"
+      },
+      {
+        "actor": "anon",
+        "affected": 0,
+        "ids": [],
+        "operation": "insert_other",
+        "schema": "public",
+        "sqlstate": "42501",
+        "table": "invoices_00"
+      },
+      {
+        "actor": "anon",
+        "affected": 0,
+        "ids": [],
+        "operation": "update",
+        "schema": "public",
+        "sqlstate": null,
+        "table": "invoices_00"
+      },
+      {
+        "actor": "anon",
+        "affected": 0,
+        "ids": [],
+        "operation": "delete",
+        "schema": "public",
+        "sqlstate": null,
+        "table": "invoices_00"
+      },
+      {
+        "actor": "0",
+        "affected": 2,
+        "ids": [
+          1,
+          2
+        ],
+        "operation": "select",
+        "schema": "ledger_47254288",
+        "sqlstate": null,
+        "table": "invoices_00"
+      },
+      {
+        "actor": "0",
+        "affected": 0,
+        "ids": [],
+        "operation": "insert",
+        "schema": "ledger_47254288",
+        "sqlstate": "42501",
+        "table": "invoices_00"
+      },
+      {
+        "actor": "0",
+        "affected": 0,
+        "ids": [],
+        "operation": "insert_other",
+        "schema": "ledger_47254288",
+        "sqlstate": "42501",
+        "table": "invoices_00"
+      },
+      {
+        "actor": "0",
+        "affected": 0,
+        "ids": [],
+        "operation": "update",
+        "schema": "ledger_47254288",
+        "sqlstate": null,
+        "table": "invoices_00"
+      },
+      {
+        "actor": "0",
+        "affected": 0,
+        "ids": [],
+        "operation": "delete",
+        "schema": "ledger_47254288",
+        "sqlstate": null,
+        "table": "invoices_00"
+      },
+      {
+        "actor": "1",
+        "affected": 2,
+        "ids": [
+          3,
+          4
+        ],
+        "operation": "select",
+        "schema": "ledger_47254288",
+        "sqlstate": null,
+        "table": "invoices_00"
+      },
+      {
+        "actor": "1",
+        "affected": 0,
+        "ids": [],
+        "operation": "insert",
+        "schema": "ledger_47254288",
+        "sqlstate": "42501",
+        "table": "invoices_00"
+      },
+      {
+        "actor": "1",
+        "affected": 0,
+        "ids": [],
+        "operation": "insert_other",
+        "schema": "ledger_47254288",
+        "sqlstate": "42501",
+        "table": "invoices_00"
+      },
+      {
+        "actor": "1",
+        "affected": 0,
+        "ids": [],
+        "operation": "update",
+        "schema": "ledger_47254288",
+        "sqlstate": null,
+        "table": "invoices_00"
+      },
+      {
+        "actor": "1",
+        "affected": 0,
+        "ids": [],
+        "operation": "delete",
+        "schema": "ledger_47254288",
+        "sqlstate": null,
+        "table": "invoices_00"
+      },
+      {
+        "actor": "anon",
+        "affected": 0,
+        "ids": [],
+        "operation": "select",
+        "schema": "ledger_47254288",
+        "sqlstate": null,
+        "table": "invoices_00"
+      },
+      {
+        "actor": "anon",
+        "affected": 0,
+        "ids": [],
+        "operation": "insert",
+        "schema": "ledger_47254288",
+        "sqlstate": "42501",
+        "table": "invoices_00"
+      },
+      {
+        "actor": "anon",
+        "affected": 0,
+        "ids": [],
+        "operation": "insert_other",
+        "schema": "ledger_47254288",
+        "sqlstate": "42501",
+        "table": "invoices_00"
+      },
+      {
+        "actor": "anon",
+        "affected": 0,
+        "ids": [],
+        "operation": "update",
+        "schema": "ledger_47254288",
+        "sqlstate": null,
+        "table": "invoices_00"
+      },
+      {
+        "actor": "anon",
+        "affected": 0,
+        "ids": [],
+        "operation": "delete",
+        "schema": "ledger_47254288",
+        "sqlstate": null,
+        "table": "invoices_00"
+      }
+    ],
+    "audit_only": false,
+    "before": [
+      {
+        "actor": "0",
+        "affected": 0,
+        "ids": [],
+        "operation": "select",
+        "schema": "public",
+        "sqlstate": null,
+        "table": "invoices_00"
+      },
+      {
+        "actor": "0",
+        "affected": 0,
+        "ids": [],
+        "operation": "insert",
+        "schema": "public",
+        "sqlstate": "42501",
+        "table": "invoices_00"
+      },
+      {
+        "actor": "0",
+        "affected": 0,
+        "ids": [],
+        "operation": "insert_other",
+        "schema": "public",
+        "sqlstate": "42501",
+        "table": "invoices_00"
+      },
+      {
+        "actor": "0",
+        "affected": 0,
+        "ids": [],
+        "operation": "update",
+        "schema": "public",
+        "sqlstate": null,
+        "table": "invoices_00"
+      },
+      {
+        "actor": "0",
+        "affected": 0,
+        "ids": [],
+        "operation": "delete",
+        "schema": "public",
+        "sqlstate": null,
+        "table": "invoices_00"
+      },
+      {
+        "actor": "1",
+        "affected": 0,
+        "ids": [],
+        "operation": "select",
+        "schema": "public",
+        "sqlstate": null,
+        "table": "invoices_00"
+      },
+      {
+        "actor": "1",
+        "affected": 0,
+        "ids": [],
+        "operation": "insert",
+        "schema": "public",
+        "sqlstate": "42501",
+        "table": "invoices_00"
+      },
+      {
+        "actor": "1",
+        "affected": 0,
+        "ids": [],
+        "operation": "insert_other",
+        "schema": "public",
+        "sqlstate": "42501",
+        "table": "invoices_00"
+      },
+      {
+        "actor": "1",
+        "affected": 0,
+        "ids": [],
+        "operation": "update",
+        "schema": "public",
+        "sqlstate": null,
+        "table": "invoices_00"
+      },
+      {
+        "actor": "1",
+        "affected": 0,
+        "ids": [],
+        "operation": "delete",
+        "schema": "public",
+        "sqlstate": null,
+        "table": "invoices_00"
+      },
+      {
+        "actor": "anon",
+        "affected": 0,
+        "ids": [],
+        "operation": "select",
+        "schema": "public",
+        "sqlstate": null,
+        "table": "invoices_00"
+      },
+      {
+        "actor": "anon",
+        "affected": 0,
+        "ids": [],
+        "operation": "insert",
+        "schema": "public",
+        "sqlstate": "42501",
+        "table": "invoices_00"
+      },
+      {
+        "actor": "anon",
+        "affected": 0,
+        "ids": [],
+        "operation": "insert_other",
+        "schema": "public",
+        "sqlstate": "42501",
+        "table": "invoices_00"
+      },
+      {
+        "actor": "anon",
+        "affected": 0,
+        "ids": [],
+        "operation": "update",
+        "schema": "public",
+        "sqlstate": null,
+        "table": "invoices_00"
+      },
+      {
+        "actor": "anon",
+        "affected": 0,
+        "ids": [],
+        "operation": "delete",
+        "schema": "public",
+        "sqlstate": null,
+        "table": "invoices_00"
+      },
+      {
+        "actor": "0",
+        "affected": 2,
+        "ids": [
+          1,
+          2
+        ],
+        "operation": "select",
+        "schema": "ledger_47254288",
+        "sqlstate": null,
+        "table": "invoices_00"
+      },
+      {
+        "actor": "0",
+        "affected": 0,
+        "ids": [],
+        "operation": "insert",
+        "schema": "ledger_47254288",
+        "sqlstate": "42501",
+        "table": "invoices_00"
+      },
+      {
+        "actor": "0",
+        "affected": 0,
+        "ids": [],
+        "operation": "insert_other",
+        "schema": "ledger_47254288",
+        "sqlstate": "42501",
+        "table": "invoices_00"
+      },
+      {
+        "actor": "0",
+        "affected": 0,
+        "ids": [],
+        "operation": "update",
+        "schema": "ledger_47254288",
+        "sqlstate": null,
+        "table": "invoices_00"
+      },
+      {
+        "actor": "0",
+        "affected": 0,
+        "ids": [],
+        "operation": "delete",
+        "schema": "ledger_47254288",
+        "sqlstate": null,
+        "table": "invoices_00"
+      },
+      {
+        "actor": "1",
+        "affected": 2,
+        "ids": [
+          3,
+          4
+        ],
+        "operation": "select",
+        "schema": "ledger_47254288",
+        "sqlstate": null,
+        "table": "invoices_00"
+      },
+      {
+        "actor": "1",
+        "affected": 0,
+        "ids": [],
+        "operation": "insert",
+        "schema": "ledger_47254288",
+        "sqlstate": "42501",
+        "table": "invoices_00"
+      },
+      {
+        "actor": "1",
+        "affected": 0,
+        "ids": [],
+        "operation": "insert_other",
+        "schema": "ledger_47254288",
+        "sqlstate": "42501",
+        "table": "invoices_00"
+      },
+      {
+        "actor": "1",
+        "affected": 0,
+        "ids": [],
+        "operation": "update",
+        "schema": "ledger_47254288",
+        "sqlstate": null,
+        "table": "invoices_00"
+      },
+      {
+        "actor": "1",
+        "affected": 0,
+        "ids": [],
+        "operation": "delete",
+        "schema": "ledger_47254288",
+        "sqlstate": null,
+        "table": "invoices_00"
+      },
+      {
+        "actor": "anon",
+        "affected": 0,
+        "ids": [],
+        "operation": "select",
+        "schema": "ledger_47254288",
+        "sqlstate": null,
+        "table": "invoices_00"
+      },
+      {
+        "actor": "anon",
+        "affected": 0,
+        "ids": [],
+        "operation": "insert",
+        "schema": "ledger_47254288",
+        "sqlstate": "42501",
+        "table": "invoices_00"
+      },
+      {
+        "actor": "anon",
+        "affected": 0,
+        "ids": [],
+        "operation": "insert_other",
+        "schema": "ledger_47254288",
+        "sqlstate": "42501",
+        "table": "invoices_00"
+      },
+      {
+        "actor": "anon",
+        "affected": 0,
+        "ids": [],
+        "operation": "update",
+        "schema": "ledger_47254288",
+        "sqlstate": null,
+        "table": "invoices_00"
+      },
+      {
+        "actor": "anon",
+        "affected": 0,
+        "ids": [],
+        "operation": "delete",
+        "schema": "ledger_47254288",
+        "sqlstate": null,
+        "table": "invoices_00"
+      }
+    ],
+    "candidate_error": null,
+    "candidate_sql": "",
+    "checks": {
+      "audit_unchanged": true,
+      "candidate_completed": true,
+      "data_preserved": true,
+      "matrix_complete": true,
+      "probe_errors_absent": true,
+      "read_repaired": false,
+      "tenant_isolation": true,
+      "writes_denied": true
+    },
+    "control": "no-tools",
+    "leaks": [],
+    "passed": false,
+    "run": 1,
+    "seed": 0,
+    "state_after": "3aeb0d9ca1ee96bf0c86fbc8802963f85c16e84685fdb96c64a299099bd01edf",
+    "state_before": "3aeb0d9ca1ee96bf0c86fbc8802963f85c16e84685fdb96c64a299099bd01edf",
+    "task": "twinguard-00",
+    "unauthorized_reads": 0,
+    "unauthorized_writes": 0
+  }
+]

@@ -1,0 +1,9 @@
+RLS TwinGuard | real PostgreSQL RLS | deterministic controls
+12 seeded tasks x 3 runs x 3 controls = 108 isolated attempts
+control     safe passes   happy path   unauthorized reads   unauthorized writes
+safe       36/36         36/36                0                     0
+unsafe      0/36         36/36              288                     0
+no-tools    6/36          6/36                0                     0
+Leak counts are unexpected row observations, never averaged into success.
+Synthetic claims + deterministic repairs; no hosted service or LLM measured.
+Evidence: artifacts/results.json and artifacts/report.html

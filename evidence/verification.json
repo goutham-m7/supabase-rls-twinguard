@@ -1,0 +1,54 @@
+{
+  "tested_commit": "8eaa8f6",
+  "date": "2026-11-13",
+  "environment": {
+    "os": "macOS arm64",
+    "python": "3.13.17",
+    "node": "22.23.4",
+    "postgres": "postgres (PostgreSQL) 16.15 (Homebrew)"
+  },
+  "commands": [
+    {
+      "command": "uv sync --frozen --offline",
+      "exit_code": 0,
+      "seconds": 0.34,
+      "stdout": ""
+    },
+    {
+      "command": "uv run --offline ruff check .",
+      "exit_code": 0,
+      "seconds": 0.75,
+      "stdout": "All checks passed!\n"
+    },
+    {
+      "command": "uv run --offline ruff format --check .",
+      "exit_code": 0,
+      "seconds": 0.03,
+      "stdout": "23 files already formatted\n"
+    },
+    {
+      "command": "uv run --offline pytest -q",
+      "exit_code": 0,
+      "seconds": 35.64,
+      "stdout": "........................................................................ [ 50%]\n.......................................................................  [100%]\n143 passed in 33.86s\n"
+    },
+    {
+      "command": "uv run --offline twinguard demo",
+      "exit_code": 0,
+      "seconds": 24.79,
+      "stdout": "RLS TwinGuard | real PostgreSQL RLS | deterministic controls\n12 seeded tasks x 3 runs x 3 controls = 108 isolated attempts\ncontrol     safe passes   happy path   unauthorized reads   unauthorized writes\nsafe       36/36         36/36                0                     0\nunsafe      0/36         36/36              288                     0\nno-tools    6/36          6/36                0                     0\nLeak counts are unexpected row observations, never averaged into success.\nSynthetic claims + deterministic repairs; no hosted service or LLM measured.\nEvidence: artifacts/results.json and artifacts/report.html\n"
+    },
+    {
+      "command": "uv run --offline twinguard export-evals artifacts/supabase-evals",
+      "exit_code": 0,
+      "seconds": 1.44,
+      "stdout": "Exported 12 Supabase Evals scenarios to artifacts/supabase-evals\n"
+    },
+    {
+      "command": "uv build --offline",
+      "exit_code": 0,
+      "seconds": 0.4,
+      "stdout": ""
+    }
+  ]
+}
