@@ -3,6 +3,7 @@
 from contextlib import contextmanager
 import os
 from pathlib import Path
+import re
 import shutil
 import subprocess
 import tempfile
@@ -16,17 +17,22 @@ def binary_directory() -> Path:
     explicit = os.environ.get("PG_BIN")
     if explicit:
         directory = Path(explicit)
+    elif Path("/opt/homebrew/opt/postgresql@16/bin/postgres").is_file():
+        directory = Path("/opt/homebrew/opt/postgresql@16/bin")
     else:
         config = shutil.which("pg_config")
-        if config:
-            directory = Path(subprocess.check_output([config, "--bindir"], text=True).strip())
-        else:
-            directory = Path("/opt/homebrew/opt/postgresql@16/bin")
+        if not config:
+            raise RuntimeError("Set PG_BIN to a PostgreSQL 16+ bin directory")
+        directory = Path(subprocess.check_output([config, "--bindir"], text=True).strip())
     for executable in ("initdb", "pg_ctl", "postgres", "pg_dump"):
         if not (directory / executable).is_file():
             raise RuntimeError(
                 "PostgreSQL binaries missing; set PG_BIN to a PostgreSQL 16+ bin directory"
             )
+    version = subprocess.check_output([str(directory / "postgres"), "--version"], text=True)
+    major = re.search(r"(\d+)\.", version)
+    if major is None or int(major[1]) < 16:
+        raise RuntimeError("PostgreSQL 16+ required; set PG_BIN to a supported binary directory")
     return directory
 
 

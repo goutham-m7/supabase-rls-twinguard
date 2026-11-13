@@ -9,6 +9,7 @@ def test_cluster_is_private_and_cleaned_up():
         directory = Path(cluster.directory)
         with cluster.connect() as conn:
             assert conn.execute("SHOW listen_addresses").fetchone()[0] == ""
+            assert int(conn.execute("SHOW server_version_num").fetchone()[0]) >= 160000
         with cluster.database() as name:
             with cluster.connect(name, "authenticated") as conn:
                 assert conn.execute("SELECT current_user").fetchone()[0] == "authenticated"
