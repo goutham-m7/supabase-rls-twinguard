@@ -1,0 +1,31 @@
+name: ci
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  postgres-rls:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    env:
+      PG_BIN: /usr/lib/postgresql/16/bin
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+        with:
+          version: 0.13.5
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22.23.4
+      - name: Install PostgreSQL 16
+        run: sudo apt-get update && sudo apt-get install -y postgresql-16
+      - run: uv sync --frozen
+      - run: uv run ruff check .
+      - run: uv run ruff format --check .
+      - run: uv run pytest -q
+      - run: uv run twinguard demo
+      - run: uv run twinguard export-evals artifacts/supabase-evals
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: twinguard-evidence
+          path: artifacts/

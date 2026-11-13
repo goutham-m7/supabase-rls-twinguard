@@ -5,20 +5,33 @@ from twinguard.scenario import scenarios
 
 
 def clean(task):
-    return [dict(schema=s, table=t, actor=a, operation=op,
-                 ids=task.expected_ids(int(a)) if op == "select" and a != "anon" else [],
-                 sqlstate=None, affected=0)
-            for s,t in task.tables for a in ("0", "1", "anon")
-            for op in ("select", "insert", "insert_other", "update", "delete")]
+    return [
+        dict(
+            schema=s,
+            table=t,
+            actor=a,
+            operation=op,
+            ids=task.expected_ids(int(a)) if op == "select" and a != "anon" else [],
+            sqlstate=None,
+            affected=0,
+        )
+        for s, t in task.tables
+        for a in ("0", "1", "anon")
+        for op in ("select", "insert", "insert_other", "update", "delete")
+    ]
 
 
 def test_behavior_not_policy_text_decides_pass():
     task = scenarios()[0]
-    result = grade(task, clean(task), {"data": [], "schema": "old"}, {"data": [], "schema": "equivalent"}, None)
+    result = grade(
+        task, clean(task), {"data": [], "schema": "old"}, {"data": [], "schema": "equivalent"}, None
+    )
     assert result["passed"]
 
 
-@pytest.mark.parametrize("mutation", ["leak", "write", "error", "missing", "duplicate", "empty", "data", "candidate"])
+@pytest.mark.parametrize(
+    "mutation", ["leak", "write", "error", "missing", "duplicate", "empty", "data", "candidate"]
+)
 def test_each_hard_failure_rejects_independently(mutation):
     task = scenarios()[0]
     evidence = clean(task)
@@ -51,6 +64,8 @@ def test_each_hard_failure_rejects_independently(mutation):
 
 def test_audit_rejects_schema_changes_even_with_perfect_access():
     task = scenarios()[10]
-    result = grade(task, clean(task), {"data": [], "schema": "a"}, {"data": [], "schema": "b"}, None)
+    result = grade(
+        task, clean(task), {"data": [], "schema": "a"}, {"data": [], "schema": "b"}, None
+    )
     assert not result["passed"]
     assert not result["checks"]["audit_unchanged"]

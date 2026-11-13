@@ -1,4 +1,5 @@
 """An agentprobe-style callable adapter with independent before/after evidence."""
+
 from collections.abc import Callable
 import hashlib
 import json
@@ -37,7 +38,17 @@ def run_attempt(cluster, task: Scenario, candidate: Candidate, label: str, run: 
         for leak in verdict["leaks"]:
             rows = before_state["data"][f"{leak['schema']}.{leak['table']}"]
             leak["rows"] = [row for row in rows if row["id"] in leak["ids"]]
-        return {"task": task.id, "seed": task.seed, "audit_only": task.audit_only,
-                "control": label, "run": run, "candidate_sql": migration, "candidate_error": error,
-                "before": before, "after": after, "state_before": digest(before_state),
-                "state_after": digest(after_state), **verdict}
+        return {
+            "task": task.id,
+            "seed": task.seed,
+            "audit_only": task.audit_only,
+            "control": label,
+            "run": run,
+            "candidate_sql": migration,
+            "candidate_error": error,
+            "before": before,
+            "after": after,
+            "state_before": digest(before_state),
+            "state_after": digest(after_state),
+            **verdict,
+        }

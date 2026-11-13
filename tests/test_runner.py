@@ -39,8 +39,10 @@ def test_candidate_sql_errors_fail_closed_and_next_attempt_is_clean(cluster):
 
 def test_grader_detects_destroyed_data(cluster):
     task = scenarios()[0]
+
     def destroy(s):
         return safe_repair(s) + "; UPDATE public.invoices_00 SET cents=1 WHERE id=1"
+
     result = run_attempt(cluster, task, destroy, "destroy", 1)
     assert not result["passed"]
     assert not result["checks"]["data_preserved"]

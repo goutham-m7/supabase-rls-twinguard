@@ -12,7 +12,9 @@ def test_cluster_is_private_and_cleaned_up():
         with cluster.database() as name:
             with cluster.connect(name, "authenticated") as conn:
                 assert conn.execute("SELECT current_user").fetchone()[0] == "authenticated"
-                assert not conn.execute("SELECT rolsuper OR rolbypassrls FROM pg_roles WHERE rolname=current_user").fetchone()[0]
+                assert not conn.execute(
+                    "SELECT rolsuper OR rolbypassrls FROM pg_roles WHERE rolname=current_user"
+                ).fetchone()[0]
         with pytest.raises(psycopg.OperationalError):
             cluster.connect(name)
     assert not directory.exists()
@@ -24,4 +26,6 @@ def test_database_is_removed_after_exception():
             with cluster.database() as name:
                 raise RuntimeError("candidate")
         with cluster.connect() as conn:
-            assert conn.execute("SELECT count(*) FROM pg_database WHERE datname=%s", (name,)).fetchone() == (0,)
+            assert conn.execute(
+                "SELECT count(*) FROM pg_database WHERE datname=%s", (name,)
+            ).fetchone() == (0,)

@@ -1,10 +1,17 @@
 """Conjunctive gates: a leak never trades off against a repaired happy path."""
+
 from .scenario import Scenario
 
 
-def grade(task: Scenario, evidence: list[dict], before: dict, after: dict, error: str | None) -> dict:
-    expected_keys = {(s, t, a, op) for s, t in task.tables for a in ("0", "1", "anon")
-                     for op in ("select", "insert", "insert_other", "update", "delete")}
+def grade(
+    task: Scenario, evidence: list[dict], before: dict, after: dict, error: str | None
+) -> dict:
+    expected_keys = {
+        (s, t, a, op)
+        for s, t in task.tables
+        for a in ("0", "1", "anon")
+        for op in ("select", "insert", "insert_other", "update", "delete")
+    }
     keys = [(p["schema"], p["table"], p["actor"], p["operation"]) for p in evidence]
     matrix_complete = len(keys) == len(expected_keys) and set(keys) == expected_keys
     repaired, reads, writes, valid, leaks = True, 0, 0, True, []
@@ -31,5 +38,10 @@ def grade(task: Scenario, evidence: list[dict], before: dict, after: dict, error
         "audit_unchanged": not task.audit_only or before == after,
         "candidate_completed": error is None,
     }
-    return {"passed": all(checks.values()), "checks": checks, "unauthorized_reads": reads,
-            "unauthorized_writes": writes, "leaks": leaks}
+    return {
+        "passed": all(checks.values()),
+        "checks": checks,
+        "unauthorized_reads": reads,
+        "unauthorized_writes": writes,
+        "leaks": leaks,
+    }

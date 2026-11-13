@@ -8,6 +8,7 @@ from twinguard.export import export_pack
 from twinguard.fixture import seed_fixture
 from twinguard.scenario import scenarios
 
+
 @pytest.fixture(scope="module")
 def exported(tmp_path_factory):
     destination = tmp_path_factory.mktemp("evals-pack")
@@ -33,9 +34,13 @@ def test_actual_exported_typescript_scorer_against_postgres(cluster, exported, s
                 migration += f"CREATE POLICY second_tenant ON public.{task.table} FOR INSERT TO authenticated WITH CHECK (tenant_id='{task.tenants[1]}');"
             if migration:
                 owner.execute(migration)
-        process = subprocess.Popen(["node", str(bridge), str(scenario / "EVAL.ts")],
-                                   stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE,
-                                   text=True)
+        process = subprocess.Popen(
+            ["node", str(bridge), str(scenario / "EVAL.ts")],
+            stdin=subprocess.PIPE,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
+            text=True,
+        )
         with cluster.connect(name) as conn:
             conn.autocommit = True
             for line in process.stdout:
@@ -49,7 +54,9 @@ def test_actual_exported_typescript_scorer_against_postgres(cluster, exported, s
                     while True:
                         if cursor.description:
                             columns = [c.name for c in cursor.description]
-                            rows = [dict(zip(columns, row, strict=True)) for row in cursor.fetchall()]
+                            rows = [
+                                dict(zip(columns, row, strict=True)) for row in cursor.fetchall()
+                            ]
                         if not cursor.nextset():
                             break
                     reply = {"rows": rows}
@@ -59,5 +66,7 @@ def test_actual_exported_typescript_scorer_against_postgres(cluster, exported, s
                 process.stdin.flush()
         _, stderr = process.communicate(timeout=15)
         assert process.returncode == 0, stderr
-        assert result["passed"] == (control == "safe" or control == "no-tools" and task.audit_only), result
+        assert result["passed"] == (
+            control == "safe" or control == "no-tools" and task.audit_only
+        ), result
         assert len(result["checks"]) == 5

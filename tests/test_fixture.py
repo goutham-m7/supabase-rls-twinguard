@@ -12,7 +12,9 @@ def test_fixture_exercises_broken_and_healthy_reads(cluster, task):
         assert len(first["data"]) == 3
         assert all(len(rows) == 4 for rows in list(first["data"].values())[:2])
         with cluster.connect(name, "fixture_owner") as conn:
-            assert conn.execute("SELECT rolsuper OR rolbypassrls FROM pg_roles WHERE rolname=current_user").fetchone() == (False,)
+            assert conn.execute(
+                "SELECT rolsuper OR rolbypassrls FROM pg_roles WHERE rolname=current_user"
+            ).fetchone() == (False,)
 
 
 def test_snapshot_detects_policy_grants_and_data_changes(cluster):

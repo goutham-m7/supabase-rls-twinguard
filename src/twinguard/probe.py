@@ -1,4 +1,5 @@
 """Run real SQL clients. Never use owner/service-role reads as access evidence."""
+
 import json
 import psycopg
 from .fixture import table_name
@@ -26,15 +27,27 @@ def probe(cluster, database: str, task: Scenario) -> list[dict]:
                 # One fresh connection/transaction per probe: failures and writes cannot poison another.
                 with cluster.connect(database, role) as conn:
                     try:
-                        conn.execute("SELECT set_config('request.jwt.claims', %s, true)", (json.dumps(claims),))
+                        conn.execute(
+                            "SELECT set_config('request.jwt.claims', %s, true)",
+                            (json.dumps(claims),),
+                        )
                         cursor = conn.execute(statement)
                         affected = cursor.rowcount
                         if operation == "select":
                             ids = sorted(row[0] for row in cursor.fetchall())
                     except psycopg.Error as exc:
-                        state = exc.sqlstate
+                        state = exc.sqlstate or type(exc).__name__
                     finally:
                         conn.rollback()
-                evidence.append({"schema": schema, "table": table, "actor": actor,
-                                 "operation": operation, "ids": ids, "affected": affected, "sqlstate": state})
+                evidence.append(
+                    {
+                        "schema": schema,
+                        "table": table,
+                        "actor": actor,
+                        "operation": operation,
+                        "ids": ids,
+                        "affected": affected,
+                        "sqlstate": state,
+                    }
+                )
     return evidence

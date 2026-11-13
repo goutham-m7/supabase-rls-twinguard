@@ -1,4 +1,5 @@
 """Seeded tasks: schema/identity variation without hidden randomness."""
+
 from dataclasses import dataclass
 from uuid import NAMESPACE_URL, uuid5
 

@@ -3,8 +3,12 @@ import subprocess
 
 
 def test_one_command_demo_writes_real_evidence(tmp_path):
-    result = subprocess.run(["twinguard", "demo", "--runs", "1", "--out", str(tmp_path)],
-                            capture_output=True, text=True, timeout=90)
+    result = subprocess.run(
+        ["twinguard", "demo", "--runs", "1", "--out", str(tmp_path)],
+        capture_output=True,
+        text=True,
+        timeout=90,
+    )
     assert result.returncode == 0, result.stderr
     assert "safe       12/12" in result.stdout
     assert "unsafe      0/12" in result.stdout

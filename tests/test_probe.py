@@ -26,7 +26,9 @@ def test_permitted_writes_are_observed_but_never_committed(cluster):
     with cluster.database() as name:
         seed_fixture(cluster, name, task)
         with cluster.connect(name, "fixture_owner") as conn:
-            conn.execute("CREATE POLICY wide ON public.invoices_00 FOR ALL TO PUBLIC USING (true) WITH CHECK (true)")
+            conn.execute(
+                "CREATE POLICY wide ON public.invoices_00 FOR ALL TO PUBLIC USING (true) WITH CHECK (true)"
+            )
         before = snapshot(cluster, name, task)
         evidence = probe(cluster, name, task)
         assert all(p["affected"] for p in evidence if p["schema"] == "public")

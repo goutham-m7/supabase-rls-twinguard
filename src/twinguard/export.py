@@ -1,4 +1,5 @@
 """Export actual PROMPT/EVAL/remote files, not an alternative eval schema."""
+
 from importlib.resources import files
 import json
 from pathlib import Path
@@ -13,7 +14,9 @@ def data_sql(task) -> str:
     pieces = []
     for schema, table in (*task.tables, ("public", "memberships")):
         name = table_name(schema, table)
-        pieces.append(f"'{schema}.{table}', (SELECT jsonb_agg(to_jsonb(t) ORDER BY to_jsonb(t)::text) FROM {name} t)")
+        pieces.append(
+            f"'{schema}.{table}', (SELECT jsonb_agg(to_jsonb(t) ORDER BY to_jsonb(t)::text) FROM {name} t)"
+        )
     return "SELECT jsonb_build_object(" + ",".join(pieces) + ") AS data"
 
 
@@ -54,14 +57,38 @@ def export_pack(destination: Path):
                 with cluster.connect(name) as conn:
                     state = conn.execute(state_sql(task)).fetchone()[0]
                     data = conn.execute(data_sql(task)).fetchone()[0]
-            spec = {"tables": task.tables, "users": task.users, "tenants": task.tenants,
-                    "auditOnly": task.audit_only, "stateSql": state_sql(task), "dataSql": data_sql(task),
-                    "state": state, "data": data}
-            prompt = ("---\nstage: " + ("investigate" if task.audit_only else "resolve") +
-                      "\ninterface: mcp\nproduct: [database, auth]\ntopic: [rls, security]\n"
-                      "motivation: https://supabase.com/docs/guides/database/postgres/row-level-security\n---\n\n" + task.prompt + "\n")
+            spec = {
+                "tables": task.tables,
+                "users": task.users,
+                "tenants": task.tenants,
+                "auditOnly": task.audit_only,
+                "stateSql": state_sql(task),
+                "dataSql": data_sql(task),
+                "state": state,
+                "data": data,
+            }
+            prompt = (
+                "---\nstage: "
+                + ("investigate" if task.audit_only else "resolve")
+                + "\ninterface: mcp\nproduct: [database, auth]\ntopic: [rls, security]\n"
+                "motivation: https://supabase.com/docs/guides/database/postgres/row-level-security\n---\n\n"
+                + task.prompt
+                + "\n"
+            )
             (path / "PROMPT.md").write_text(prompt)
             (path / "remote" / "project.sql").write_text(fixture_sql(task))
-            (path / "EVAL.ts").write_text(template.replace("__SPEC__", json.dumps(spec, sort_keys=True)))
-    (destination / "upstream.json").write_text(json.dumps({"repository": "https://github.com/supabase/evals", "commit": UPSTREAM,
-        "contract": "ToolScorer / ctx.query; SQL clients, not PostgREST", "cases": 12}, indent=2) + "\n")
+            (path / "EVAL.ts").write_text(
+                template.replace("__SPEC__", json.dumps(spec, sort_keys=True))
+            )
+    (destination / "upstream.json").write_text(
+        json.dumps(
+            {
+                "repository": "https://github.com/supabase/evals",
+                "commit": UPSTREAM,
+                "contract": "ToolScorer / ctx.query; SQL clients, not PostgREST",
+                "cases": 12,
+            },
+            indent=2,
+        )
+        + "\n"
+    )
