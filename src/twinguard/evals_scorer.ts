@@ -23,18 +23,32 @@ const scorer: ToolScorer = async (ctx) => {
         const expected = actor === 'anon' ? [] : [Number(actor) * 2 + 1, Number(actor) * 2 + 2];
         const operations = [
           ['select', `SELECT id FROM ${target} ORDER BY id`],
-          ['insert', `INSERT INTO ${target} VALUES (999, '${spec.tenants[0]}', 777) RETURNING id`],
-          ['update', `UPDATE ${target} SET cents=cents+1 RETURNING id`],
-          ['delete', `DELETE FROM ${target} RETURNING id`],
+          ['insert', `INSERT INTO ${target} VALUES (999, '${spec.tenants[0]}', 777)`],
+          ['insert_other', `INSERT INTO ${target} VALUES (999, '${spec.tenants[1]}', 777)`],
+          ['update', `UPDATE ${target} SET cents=cents+1`],
+          ['delete', `DELETE FROM ${target}`],
         ];
         for (const [operation, statement] of operations) {
-          let ids: number[] = [], code: string | undefined;
+          let ids: number[] = [], affected = 0, code: string | undefined;
           try {
-            const result = await ctx.query(`BEGIN; SET LOCAL ROLE ${role};
+            // RETURNING adds a SELECT check and can hide an otherwise allowed blind write.
+            const body = operation === 'select' ? statement : `DO $probe$
+              DECLARE touched integer;
+              BEGIN ${statement}; GET DIAGNOSTICS touched = ROW_COUNT;
+                INSERT INTO pg_temp.twinguard_count VALUES (touched);
+              END $probe$; SELECT n FROM pg_temp.twinguard_count`;
+            const result = await ctx.query(`BEGIN;
+              CREATE TEMP TABLE twinguard_count (n integer);
+              GRANT SELECT, INSERT ON twinguard_count TO authenticated, anon;
+              SET LOCAL ROLE ${role};
               SET LOCAL request.jwt.claim.sub = '${sub}';
               SET LOCAL request.jwt.claims = '${claims}';
-              ${statement}; ROLLBACK;`);
-            ids = result.rows.map(row => Number(row.id));
+              ${body}; ROLLBACK;`);
+            if (operation === 'select') ids = result.rows.map(row => Number(row.id));
+            else {
+              affected = Number(result.rows[0]?.n);
+              if (!Number.isInteger(affected) || affected < 0) code = 'missing-write-evidence';
+            }
           } catch (error) {
             code = error instanceof Error && 'code' in error ? String(error.code) : 'unknown';
           } finally {
@@ -46,7 +60,7 @@ const scorer: ToolScorer = async (ctx) => {
             if (actor !== 'anon') repaired &&= code === undefined && expected.every(id => ids.includes(id));
             isolated &&= ids.every(id => expected.includes(id));
           } else {
-            writesDenied &&= ids.length === 0;
+            writesDenied &&= affected === 0;
           }
         }
       }

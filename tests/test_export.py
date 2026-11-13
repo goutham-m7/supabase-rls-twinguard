@@ -8,20 +8,29 @@ from twinguard.export import export_pack
 from twinguard.fixture import seed_fixture
 from twinguard.scenario import scenarios
 
+@pytest.fixture(scope="module")
+def exported(tmp_path_factory):
+    destination = tmp_path_factory.mktemp("evals-pack")
+    export_pack(destination)
+    return destination
 
-@pytest.mark.parametrize("control", ["safe", "unsafe", "no-tools"])
-@pytest.mark.parametrize("seed", [0, 1, 2, 10, 11])
-def test_actual_exported_typescript_scorer_against_postgres(cluster, tmp_path, seed, control):
+
+@pytest.mark.parametrize("control", ["safe", "unsafe", "no-tools", "blind-insert", "second-tenant"])
+@pytest.mark.parametrize("seed", range(12))
+def test_actual_exported_typescript_scorer_against_postgres(cluster, exported, seed, control):
     task = scenarios()[seed]
-    export_pack(tmp_path)
-    scenario = tmp_path / "regression" / task.id
+    scenario = exported / "regression" / task.id
     assert (scenario / "PROMPT.md").read_text().startswith("---\nstage:")
     assert (scenario / "remote" / "project.sql").is_file()
     bridge = Path(__file__).parent / "upstream_bridge.mjs"
     with cluster.database() as name:
         seed_fixture(cluster, name, task)
         with cluster.connect(name, "fixture_owner") as owner:
-            migration = CONTROLS[control](task)
+            migration = CONTROLS[control if control in CONTROLS else "safe"](task)
+            if control == "blind-insert":
+                migration += f"CREATE POLICY blind ON public.{task.table} FOR INSERT TO anon WITH CHECK (true);"
+            if control == "second-tenant":
+                migration += f"CREATE POLICY second_tenant ON public.{task.table} FOR INSERT TO authenticated WITH CHECK (tenant_id='{task.tenants[1]}');"
             if migration:
                 owner.execute(migration)
         process = subprocess.Popen(["node", str(bridge), str(scenario / "EVAL.ts")],

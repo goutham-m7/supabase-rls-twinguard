@@ -16,21 +16,25 @@ def probe(cluster, database: str, task: Scenario) -> list[dict]:
                 claims["sub"] = task.users[int(actor)]
             operations = {
                 "select": f"SELECT id FROM {qualified} ORDER BY id",
-                "insert": f"INSERT INTO {qualified} VALUES (999, '{task.tenants[0]}', 777) RETURNING id",
-                "update": f"UPDATE {qualified} SET cents=cents+1 RETURNING id",
-                "delete": f"DELETE FROM {qualified} RETURNING id",
+                "insert": f"INSERT INTO {qualified} VALUES (999, '{task.tenants[0]}', 777)",
+                "insert_other": f"INSERT INTO {qualified} VALUES (999, '{task.tenants[1]}', 777)",
+                "update": f"UPDATE {qualified} SET cents=cents+1",
+                "delete": f"DELETE FROM {qualified}",
             }
             for operation, statement in operations.items():
-                ids, state = [], None
+                ids, affected, state = [], 0, None
                 # One fresh connection/transaction per probe: failures and writes cannot poison another.
                 with cluster.connect(database, role) as conn:
                     try:
                         conn.execute("SELECT set_config('request.jwt.claims', %s, true)", (json.dumps(claims),))
-                        ids = sorted(row[0] for row in conn.execute(statement).fetchall())
+                        cursor = conn.execute(statement)
+                        affected = cursor.rowcount
+                        if operation == "select":
+                            ids = sorted(row[0] for row in cursor.fetchall())
                     except psycopg.Error as exc:
                         state = exc.sqlstate
                     finally:
                         conn.rollback()
                 evidence.append({"schema": schema, "table": table, "actor": actor,
-                                 "operation": operation, "ids": ids, "sqlstate": state})
+                                 "operation": operation, "ids": ids, "affected": affected, "sqlstate": state})
     return evidence

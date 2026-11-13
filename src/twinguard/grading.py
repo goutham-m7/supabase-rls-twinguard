@@ -4,7 +4,7 @@ from .scenario import Scenario
 
 def grade(task: Scenario, evidence: list[dict], before: dict, after: dict, error: str | None) -> dict:
     expected_keys = {(s, t, a, op) for s, t in task.tables for a in ("0", "1", "anon")
-                     for op in ("select", "insert", "update", "delete")}
+                     for op in ("select", "insert", "insert_other", "update", "delete")}
     keys = [(p["schema"], p["table"], p["actor"], p["operation"]) for p in evidence]
     matrix_complete = len(keys) == len(expected_keys) and set(keys) == expected_keys
     repaired, reads, writes, valid, leaks = True, 0, 0, True, []
@@ -20,7 +20,7 @@ def grade(task: Scenario, evidence: list[dict], before: dict, after: dict, error
             if foreign:
                 leaks.append({**p, "ids": foreign})
         else:
-            writes += len(p["ids"])
+            writes += p["affected"]
     checks = {
         "matrix_complete": matrix_complete,
         "read_repaired": bool(repaired),

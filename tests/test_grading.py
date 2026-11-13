@@ -7,9 +7,9 @@ from twinguard.scenario import scenarios
 def clean(task):
     return [dict(schema=s, table=t, actor=a, operation=op,
                  ids=task.expected_ids(int(a)) if op == "select" and a != "anon" else [],
-                 sqlstate=None)
+                 sqlstate=None, affected=0)
             for s,t in task.tables for a in ("0", "1", "anon")
-            for op in ("select", "insert", "update", "delete")]
+            for op in ("select", "insert", "insert_other", "update", "delete")]
 
 
 def test_behavior_not_policy_text_decides_pass():
@@ -28,7 +28,7 @@ def test_each_hard_failure_rejects_independently(mutation):
     if mutation == "leak":
         evidence[0]["ids"] += [3]
     elif mutation == "write":
-        evidence[1]["ids"] = [999]
+        evidence[1]["affected"] = 1
     elif mutation == "error":
         evidence[1]["sqlstate"] = "42P01"
     elif mutation == "missing":

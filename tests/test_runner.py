@@ -9,7 +9,7 @@ def test_safe_control_repairs_without_expansion(cluster, task):
     result = run_attempt(cluster, task, safe_repair, "safe", 1)
     assert result["passed"]
     assert result["unauthorized_reads"] == result["unauthorized_writes"] == 0
-    assert len(result["before"]) == len(result["after"]) == 24
+    assert len(result["before"]) == len(result["after"]) == 30
 
 
 @pytest.mark.parametrize("task", scenarios(), ids=lambda s: s.id)
