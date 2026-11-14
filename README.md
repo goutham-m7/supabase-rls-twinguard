@@ -1,6 +1,16 @@
 # RLS TwinGuard
 
-Repair a broken read without expanding permissions. For engineers evaluating Supabase coding agents, a working happy path is insufficient: the second tenant and anonymous client must still be denied. Supabase's [RLS guide](https://supabase.com/docs/guides/database/postgres/row-level-security) explicitly calls for allow/deny checks across operations and identities.
+A local PostgreSQL harness checking that a repaired read does not expand permissions.
+
+## The problem
+
+Developers building tenant-based apps can make a broken screen work by weakening database permissions, while silently exposing another customer's rows or enabling unwanted writes. A successful happy-path request is not an isolation test.
+
+- [Matt Palmer's CVE-2025-48757 disclosure](https://mattpalmer.io/posts/2025/05/statement-on-CVE-2025-48757/) (2025-05-29) reports **303 endpoints across 170 Lovable-built projects** with inadequate Supabase RLS settings, including unauthorized reads and a demonstrated write. These are application-configuration failures, not a claimed Supabase engine defect.
+- [Supabase's RLS guide](https://supabase.com/docs/guides/database/postgres/row-level-security) (undated; checked 2026-11-14) warns that exposed tables without RLS are readable/writable by granted roles and requires allow/deny tests across operations and identities.
+- [Supabase MCP issue #395](https://github.com/supabase/mcp/issues/395) (opened 2026-08-29; **4 comments**, checked 2026-11-14), the pitch's original source, reports a schema-scoped RLS advisory that can appear database-wide; it is evidence of audit incompleteness, not a demonstrated production leak.
+
+TwinGuard evaluates deterministic repairs against real local PostgreSQL, requiring legitimate reads while rejecting cross-tenant/anonymous access, write expansion and data changes; its fixtures are synthetic, not a hosted-service or LLM benchmark.
 
 **Headline: 36/36 unsafe controls rejected even though all 36 restored the happy path.** Real local PostgreSQL 16 RLS, not mocked authorization. Synthetic fixtures and deterministic repair controls, not an LLM benchmark.
 
